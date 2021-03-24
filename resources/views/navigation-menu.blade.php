@@ -15,6 +15,9 @@
                     <x-jet-nav-link href="{{ route('expense') }}" :active="request()->routeIs('expense')">
                         {{ __('Despesas') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('expense.create') }}" :active="request()->routeIs('expense.create')">
+                        {{ __('Criar Despesa') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -140,6 +143,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('expense') }}" :active="request()->routeIs('expense')">
                 {{ __('Despesas') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('expense.create') }}" :active="request()->routeIs('expense.create')">
+                {{ __('Criar Despesa') }}
             </x-jet-responsive-nav-link>
         </div>
 
