@@ -10,7 +10,13 @@ class ExpenseController extends Controller
 {
     public function index()
     {
-        return view('expense');
+        $expenses = Expense::all();
+        $handleUser = $expenses->filter(function($user){
+            return $user->user_id == Auth::id();
+        });
+        $handleUser->all();
+
+        return view('expense', [ 'expenses' => $handleUser]);
     }
 
     public function create()
@@ -29,7 +35,7 @@ class ExpenseController extends Controller
 
     public function show(Expense $expense)
     {
-        //
+        return view('expenses.show', [ 'expense' => $expense ]);
     }
 
     public function edit(Expense $expense)
