@@ -22,3 +22,5 @@ Route::get('/expense', [ExpenseController::class, 'index'])->middleware(['auth:s
 Route::get('/expense/create', [ExpenseController::class, 'create'])->middleware(['auth:sanctum', 'verified'])->name('expense.create');
 Route::post('/expense',[ExpenseController::class, 'store'])->middleware(['auth:sanctum', 'verified'])->name('expense.store');
 Route::get('/expense/{expense}', [ExpenseController::class, 'show'])->middleware(['auth:sanctum', 'verified'])->name('expense.show');
+Route::get('/expense/{expense}/edit', [ExpenseController::class, 'edit'])->middleware(['auth:sanctum', 'verified'])->name('expense.edit');
+Route::put('/expense/{expense}', [ExpenseController::class, 'update'])->middleware(['auth:sanctum', 'verified'])->name('expense.update');

@@ -40,12 +40,13 @@ class ExpenseController extends Controller
 
     public function edit(Expense $expense)
     {
-        //
+        return view('expenses.edit', [ 'expense' => $expense ]);
     }
 
     public function update(Request $request, Expense $expense)
     {
-        //
+        $expense->update($request->all());
+        return redirect()->route('expense');
     }
 
     public function destroy(Expense $expense)

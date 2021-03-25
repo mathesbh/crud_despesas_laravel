@@ -13,7 +13,7 @@
                             </a>
                           </div>
                           <div class="justify-self-end -mr-5">
-                            <a  href="http://">
+                            <a  href="{{ route('expense.edit', ['expense' => $expense->id]) }}">
                               <i class="fas fa-edit text-yellow-500">Editar</i>
                             </a>
                           </div>
