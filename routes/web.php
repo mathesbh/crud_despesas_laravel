@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/expense', [ExpenseController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('expense');
 Route::get('/expense/create', [ExpenseController::class, 'create'])->middleware(['auth:sanctum', 'verified'])->name('expense.create');
 Route::post('/expense',[ExpenseController::class, 'store'])->middleware(['auth:sanctum', 'verified'])->name('expense.store');
+Route::get('/expense/{expense}', [ExpenseController::class, 'show'])->middleware(['auth:sanctum', 'verified'])->name('expense.show');
