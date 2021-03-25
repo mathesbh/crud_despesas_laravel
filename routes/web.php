@@ -24,3 +24,4 @@ Route::post('/expense',[ExpenseController::class, 'store'])->middleware(['auth:s
 Route::get('/expense/{expense}', [ExpenseController::class, 'show'])->middleware(['auth:sanctum', 'verified'])->name('expense.show');
 Route::get('/expense/{expense}/edit', [ExpenseController::class, 'edit'])->middleware(['auth:sanctum', 'verified'])->name('expense.edit');
 Route::put('/expense/{expense}', [ExpenseController::class, 'update'])->middleware(['auth:sanctum', 'verified'])->name('expense.update');
+Route::get('/expense/{expense}/deletar', [ExpenseController::class, 'destroy'])->middleware(['auth:sanctum', 'verified'])->name('expense.destroy');

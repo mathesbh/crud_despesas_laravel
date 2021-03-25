@@ -18,7 +18,7 @@
                             </a>
                           </div>
                           <div class="justify-self-end">
-                            <a class="" href="">
+                            <a href="{{ route('expense.destroy', ['expense' => $expense->id]) }}">
                               <i class="fas fa-trash-alt text-red-500">Excluir</i>
                             </a>
                           </div>
