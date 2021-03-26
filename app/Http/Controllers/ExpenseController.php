@@ -28,7 +28,16 @@ class ExpenseController extends Controller
     {
         $id = Auth::id();
         $requestData = $request->all();
-        $requestData['user_id'] = $id;   
+        $requestData['user_id'] = $id;
+
+        if($request->hasFile('img') && $request->file('img')->isValid()){
+            $requestImg = $request->img;
+            $extension = $requestImg->extension();
+            $imgName = md5($requestImg->getClientOriginalName() . strtotime("now")) . '.' . $extension;
+            $requestImg->move(public_path('img/anexos'), $imgName);
+            $requestData['img'] = $imgName;
+        }
+
         Expense::create($requestData);
         return redirect()->route('expense');
     }

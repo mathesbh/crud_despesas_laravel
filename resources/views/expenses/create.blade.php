@@ -2,7 +2,7 @@
     <div class="p-5">
         <div class="sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <form class="p-3 md:w-11/12 lg:w-1/2 mx-auto" action="{{ route('expense.store') }}" method="POST">
+                <form class="p-3 md:w-11/12 lg:w-1/2 mx-auto" action="{{ route('expense.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div class="mt-4">
                         <x-jet-label for="description" value="{{ __('Descrição') }}" />

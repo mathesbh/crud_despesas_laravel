@@ -7,10 +7,10 @@
                     <div class="p-5 text-xl">
                         <p>Descrição: {{ $expense->description }}</p>
                         <p>Valor: R${{ $expense->cost }}</p>
-                        <p>Data: {{ $expense->created_at }}</p>
+                        <p>Data: {{ date('d-m-Y', strtotime($expense->created_at)) }}</p>
                         <p>Anexo:
                             @if ($expense->img)
-                                <img src={{ $expense->img }} alt="">
+                                <img src="/img/anexos/{{ $expense->img }}" alt="{{'anexo despesa' . $expense->description  }}">
                             @else
                                 <span>Nenhum anexo</span>
                             @endif
